@@ -52,7 +52,49 @@ export class Contato {
         return this.email;
     }
     obterAniversario() {
-        return this.aniversario;
+        let data = this.aniversario;
+        let dia = this.aniversario.getDate() + 1;
+        let mes = this.aniversario.getMonth() + 1;
+        let mesNome = "";
+        switch(mes) {
+            case 1:
+                mesNome = 'Janeiro';
+                break
+            case 2:
+                mesNome = 'Feveiro';
+                break
+            case 3:
+                mesNome = 'Março';
+                break
+            case 4:
+                mesNome = 'Abril';
+                break
+            case 5:
+                mesNome = 'Maio';
+                break
+            case 6:
+                mesNome = 'Junho';
+                break
+            case 7:
+                mesNome = 'Julho';
+                break
+            case 8:
+                mesNome = 'Agosto';
+                break
+            case 9:
+                mesNome = 'Setembro';
+                break
+            case 10:
+                mesNome = 'Novembro';
+                break
+            case 11:
+                mesNome = 'Outubro';
+                break;
+            case 12:
+                mesNome = 'Dezembro';
+
+        }
+        return `${dia} de ${mesNome}`;
     }
     obterTipo() {
         return this.tipo;

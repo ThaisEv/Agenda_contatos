@@ -12,8 +12,8 @@ export class AppComponent {
   imagemSelecionada: string;
 
     constructor() {
-      let ana = new Contato('Ana Maria', '(84) 91234-5678', 'ana.maria@gmail.com', new Date(9, 8, 2001), Tipo.trab, 'avatar/mulher1.png');
-      let jorge = new Contato('Jorge', '(84) 91234-5678', 'jorge.silva@gmail.com', new Date(9, 8, 2001), Tipo.fam, 'avatar/homem1.png')
+      let ana = new Contato('Ana Maria', '(84) 91234-5678', 'ana.maria@gmail.com', new Date(2001, 9, 5), Tipo.trab, 'avatar/mulher1.png');
+      let jorge = new Contato('Jorge', '(84) 91234-5678', 'jorge.silva@gmail.com', new Date(2005, 8, 1), Tipo.fam, 'avatar/homem1.png')
       
       this.contatos = [ana, jorge];
       this.tipos = [Tipo.amg, Tipo.fam, Tipo.trab, Tipo.des];
