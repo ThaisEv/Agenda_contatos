@@ -12,6 +12,7 @@ export class Contato {
     private aniversario: Date;
     private tipo: Tipo;
     private img: string;
+    private favorito: boolean;
 
     constructor(nom: string, tel: string, email: string, aniv: Date
                 ,tipo: Tipo, img: string) {
@@ -21,6 +22,7 @@ export class Contato {
                     this.aniversario = aniv;
                     this.tipo = tipo;
                     this.img = img;
+                    this.favorito = false;
                 }
     
     alterarNome(nome: string) {
@@ -41,6 +43,16 @@ export class Contato {
     alterarImg(img: string) {
         this.img = img;
     }
+    alterarFav(cod: boolean) {
+        this.favorito = cod;
+    }
+
+    favoritarContato() {
+        this.favorito = true;
+    }
+    desfavoritarContato() {
+        this.favorito = false;
+    }
 
     obterNome() {
         return this.nome;
@@ -59,5 +71,8 @@ export class Contato {
     }
     obterImg() {
         return this.img;
+    }
+    obterFav() {
+        return this.favorito;
     }
 }

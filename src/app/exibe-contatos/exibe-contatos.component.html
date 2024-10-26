@@ -1,0 +1,26 @@
+<div class="row g-2 p-5 justify-content-between mx-auto">
+    <h5 class="text-secondary">Minha agenda</h5>
+    <div class="border-0 col-md-6 card mb-3" style="max-width: 540px;" *ngFor="let item of cs.contatos">
+      <div class="row g-0">
+        <div class="col-md-4 icon_agenda">
+          <img src="{{item.obterImg()}}" class="img-fluid rounded-start" alt="Icone de contato.">
+        </div>
+        <div class="col-md-6">
+          <div class="card-body">
+            <h5 class="card-title">{{item.obterNome()}}</h5>
+            <p class="card-text"><small class="text-body-secondary">
+                <div [ngClass]="{
+          'badge': true,
+          'text-bg-primary': item.obterTipo() === 'Amigo(a)',
+          'text-bg-success': item.obterTipo() === 'Familia',
+          'text-bg-warning': item.obterTipo() === 'Trabalho',
+          'text-bg-secondary': item.obterTipo() === 'Desconhecido(a)'
+      }">{{item.obterTipo()}}</div>
+              </small><br>
+              <b>Tel.:</b> {{item.obterTelefone()}} <br> <b>Email:</b> {{item.obterEmail()}}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
