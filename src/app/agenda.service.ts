@@ -6,17 +6,30 @@ import { Contato, Tipo } from './contato';
 })
 export class AgendaService {
   contatos: Contato[];
+  favoritos: Contato[];
   tipos: Tipo[];
   imagemSelecionada: string;
 
     constructor() {
-      let ana = new Contato('Ana Maria', '(84) 91234-5678', 'ana.maria@gmail.com', new Date(9, 8, 2001), Tipo.trab, 'avatar/mulher1.png');
-      let jorge = new Contato('Jorge', '(84) 91234-5678', 'jorge.silva@gmail.com', new Date(9, 8, 2001), Tipo.fam, 'avatar/homem1.png')
-      ana.favoritarContato();
+      let ana = new Contato('Ana Maria', '(84) 91234-5678', 'ana.maria@gmail.com', new Date(9, 8, 2001), Tipo.trab, 'avatar/mulher1.png', true);
+      let jorge = new Contato('Jorge', '(84) 91234-5678', 'jorge.silva@gmail.com', new Date(9, 8, 2001), Tipo.fam, 'avatar/homem1.png', false);
+      let marcos = new Contato('Marcos Campos', '(84) 91234-5678', 'marcos.campos@gmail.com', new Date(1, 10, 2004), Tipo.amg, 'avatar/homem.png', true);  
 
-      this.contatos = [ana, jorge];
+
+      this.contatos = [ana, jorge, marcos];
       this.tipos = [Tipo.amg, Tipo.fam, Tipo.trab, Tipo.des];
       this.imagemSelecionada = '';
+      this.favoritos = [];
+
+      this.contatosFav();
+    }
+
+    contatosFav() {
+        for(let x = 0; x < this.contatos.length; x++) {
+            if(this.contatos[x].obterFav()) {
+                this.favoritos.push(this.contatos[x]);
+            }
+        }
     }
 
     cadastrarListaDeContatos(lista: Contato[]) {
@@ -31,14 +44,14 @@ export class AgendaService {
     cadastrarContato(contato: Contato) {
         this.contatos.push(contato);
     }
-    cadastrarContatoPorItens(nome: string, tel: string, email: string, data: string, tipo: string, img: string) {
+    cadastrarContatoPorItens(nome: string, tel: string, email: string, data: string, tipo: string, img: string, fav: boolean) {
       let t = Tipo.des;
       for(let x = 0; x < this.tipos.length; x++) {
         if(this.tipos[x] == tipo) {
           t = this.tipos[x];
         }
       }
-      this.contatos.push(new Contato(nome, tel, email, new Date(data), t, img));
+      this.contatos.push(new Contato(nome, tel, email, new Date(data), t, img, fav));
     }
     obterListaDeContatos() {
         return this.contatos;

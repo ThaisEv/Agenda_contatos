@@ -15,14 +15,14 @@ export class Contato {
     private favorito: boolean;
 
     constructor(nom: string, tel: string, email: string, aniv: Date
-                ,tipo: Tipo, img: string) {
+                ,tipo: Tipo, img: string, fav: boolean) {
                     this.nome = nom;
                     this.telefone = tel;
                     this.email = email;
                     this.aniversario = aniv;
                     this.tipo = tipo;
                     this.img = img;
-                    this.favorito = false;
+                    this.favorito = fav;
                 }
     
     alterarNome(nome: string) {

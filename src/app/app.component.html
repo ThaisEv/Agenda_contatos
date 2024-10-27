@@ -1,21 +1,49 @@
-<nav class="navbar bg-body-tertiary">
+<nav class="navbar ps-5 bg-body-tertiary">
   <div class="container-fluid">
-    <a class="navbar-brand text-secondary fs-5 fw-medium" href="#">
-      <img src="livro-de-contato.png" alt="Logo" height="30" class="d-inline-block align-text-top">
+    <a class="navbar-brand  fs-5 fw-medium" href="#">
+      <img src="livro-de-enderecos.svg" alt="Logo" height="24" class="d-inline-block align-text-top">
       Minha Agenda
     </a>
   </div>
 </nav>
 
-
 <div class="container">
+
+  <div class="container mt-4 mt-2">
+    <input class="btn btn-primary mb-4" value="Novo contato" [ngClass]="{
+    'aparecer': !adicionaContato,
+    'desaparecer': adicionaContato 
+  }" (click)="aparecerAdicionar()">
+    <input class="btn btn-secondary" value="Fechar" [ngClass]="{
+    'aparecer': adicionaContato,
+    'desaparecer': !adicionaContato 
+  }" (click)="desaparecerAdicionar()">
+  </div>
+
+  <div class="container" *ngIf="adicionaContato">
     <app-adiciona-contato></app-adiciona-contato>
-</div>
+  </div>
 
-<div class="container">
-  <app-exibe-contatos></app-exibe-contatos>
-</div>
+  <div class="container">
+    <div class="btn-group" role="group">
+      <input class="btn fs-6" style="max-width: 100px;" [ngClass]="{
+     'btn-primary': mudarDiv == 0,
+     'btn-outline-secondary': mudarDiv == 1
+    }" value="Todos" (click)="aparecerTodos()">
+      <input class=" fs-6 btn" style="max-width: 120px;" [ngClass]="{
+      'btn-warning': mudarDiv == 1,
+      'btn-outline-secondary': mudarDiv == 0
+    }" value="Favoritos" (click)="aparecerFavoritos()">
+    </div>
+  </div>
 
-<div class="container">
-  <app-exibe-favoritos></app-exibe-favoritos>
+
+  <div class="container" *ngIf="mudarDiv == 0">
+    <app-exibe-contatos></app-exibe-contatos>
+  </div>
+
+  <div class="container" *ngIf="mudarDiv == 1">
+    <app-exibe-favoritos></app-exibe-favoritos>
+  </div>
+
 </div>

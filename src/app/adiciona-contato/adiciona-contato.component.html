@@ -1,77 +1,96 @@
-<form class="row g-8 p-5 formulario">
-    <h5 class="text-secondary">Adicionar novo contato:</h5>
-    <div class="col-auto">
-      <label for="b1" class="form-label">Nome: </label>
-      <input id="b1" class="form-control" name="b1" type="text" placeholder="(Nome)" required #no>
+<form class="row g-3 p-5 formulario">
+
+  <h5 class="text-secondary">Adicionar novo contato:</h5>
+
+  <div class="col-md-8">
+    <label for="b1" class="form-label">Nome: </label>
+    <input id="b1" class="form-control" name="b1" type="text" placeholder="(Nome)" required #no>
+  </div>
+
+  <div class="col-md-4">
+    <label class="form-label" for="tipo">Tipo: </label>
+    <select class="form-select" name="tipo" id="tipo" required #tipo>
+      <option value="" selected>(Selecionar)</option>
+      <option *ngFor="let tipo of cs.tipos" [value]="tipo">{{tipo}}</option>
+    </select>
+  </div>
+
+  <div class="col-md-5">
+    <label class="form-label" for="email">Email: </label>
+    <input class="form-control" id="email" name="email" type="email" placeholder="(example@email.com)" required #email>
+  </div>
+
+  <div class="col-md-4">
+    <label class="form-label" for="tel"> Telefone: </label>
+    <input class="form-control" id="tel" name="tel" type="tel" placeholder="(00) 0000-0000" required #tel>
+  </div>
+
+  
+  <div class="col-md-3">
+    <label class="form-label" for="nasc">Data de nascimento: </label>
+    <input class="form-control" id="nasc" name="nasc" type="date" required #data>
+  </div>
+
+
+
+  <br>
+
+  <div class="row g-1 p-3">
+    <label class="p-1">Selecione o avatar:</label>
+
+    <div class="col-md-2 form-check">
+      <input class="form-check-input" type="radio" name="imagem" id="imagem1" value="avatar/homem.png"
+        [(ngModel)]="cs.imagemSelecionada">
+      <label class="form-check-label" for="imagem1">
+        <img class="img-fluid" src="avatar/homem.png" alt="Imagem 1" width="120">
+      </label>
     </div>
 
-    <div class="col-auto">
-      <label class="form-label" for="tipo">Tipo: </label>
-      <select class="form-select" name="tipo" id="tipo" required #tipo>
-        <option value="" selected>(Selecionar)</option>
-        <option *ngFor="let tipo of cs.tipos" [value]="tipo">{{tipo}}</option>
-      </select>
+    <div class="col-md-2 form-check">
+      <input class="form-check-input" type="radio" name="imagem" id="imagem2" value="avatar/mulher.png"
+        [(ngModel)]="cs.imagemSelecionada">
+      <label class="form-check-label" for="imagem2">
+        <img class="img-fluid" src="avatar/mulher.png" alt="Imagem 2" width="120">
+      </label>
     </div>
 
-
-    <div class="col-auto">
-      <label class="form-label" for="tel"> Telefone: </label>
-      <input class="form-control" id="tel" name="tel" type="tel" placeholder="(00) 0000-0000" required #tel>
+    <div class="col-md-2 form-check">
+      <input class="form-check-input" type="radio" name="imagem" id="imagem3" value="avatar/homem1.png"
+        [(ngModel)]="cs.imagemSelecionada">
+      <label class="form-check-label" for="imagem3">
+        <img  class="img-fluid" src="avatar/homem1.png" alt="Imagem 3" width="120">
+      </label>
     </div>
 
-    <div class="col-auto">
-      <label class="form-label" for="b3">Email: </label>
-      <input class="form-control" id="b3" name="b3" type="email" placeholder="(example@email.com)" required #email>
+    <div class="col-md-2 form-check">
+      <input class="form-check-input" type="radio" name="imagem" id="imagem4" value="avatar/mulher1.png"
+        [(ngModel)]="cs.imagemSelecionada">
+      <label class="form-check-label" for="imagem4">
+        <img  class="img-fluid" src="avatar/mulher1.png" alt="Imagem 4" width="120">
+      </label>
     </div>
 
-    <div class="col-auto">
-      <label class="form-label" for="nasc">Data de nascimento: </label>
-      <input class="form-control" id="nasc" name="nasc" type="date" required #data>
+    <div class="col-md-2 form-check">
+      <input class="form-check-input" type="radio" name="imagem" id="imagem4" value="avatar/velho.png"
+        [(ngModel)]="cs.imagemSelecionada">
+      <label class="form-check-label" for="imagem5">
+        <img  class="img-fluid" src="avatar/velho.png" alt="Imagem 5" width="120">
+      </label>
     </div>
+
     <br>
 
-    <div class="row g-1 p-3">
-      <label class="p-1">Selecione o avatar:</label>
-      <div class="col-md-2 form-check">
-        <input class="form-check-input" type="radio" name="imagem" id="imagem1" value="avatar/homem.png"
-          [(ngModel)]="cs.imagemSelecionada">
-        <label class="form-check-label" for="imagem1">
-          <img src="avatar/homem.png" alt="Imagem 1" width="120">
-        </label>
-      </div>
-      <div class="col-md-2 form-check">
-        <input class="form-check-input" type="radio" name="imagem" id="imagem2" value="avatar/mulher.png"
-          [(ngModel)]="cs.imagemSelecionada">
-        <label class="form-check-label" for="imagem2">
-          <img src="avatar/mulher.png" alt="Imagem 2" width="120">
-        </label>
-      </div>
-      <div class="col-md-2 form-check">
-        <input class="form-check-input" type="radio" name="imagem" id="imagem3" value="avatar/homem1.png"
-          [(ngModel)]="cs.imagemSelecionada">
-        <label class="form-check-label" for="imagem3">
-          <img src="avatar/homem1.png" alt="Imagem 3" width="120">
-        </label>
-      </div>
-      <div class="col-md-2 form-check">
-        <input class="form-check-input" type="radio" name="imagem" id="imagem4" value="avatar/mulher1.png"
-          [(ngModel)]="cs.imagemSelecionada">
-        <label class="form-check-label" for="imagem4">
-          <img src="avatar/mulher1.png" alt="Imagem 4" width="120">
-        </label>
-      </div>
-      <div class="col-md-2 form-check">
-        <input class="form-check-input" type="radio" name="imagem" id="imagem4" value="avatar/velho.png"
-          [(ngModel)]="cs.imagemSelecionada">
-        <label class="form-check-label" for="imagem5">
-          <img src="avatar/velho.png" alt="Imagem 5" width="120">
-        </label>
-      </div>
-
-      <div class=" pt-4">
-        <input class="btn btn-primary" type="button" value="Adicionar"
-          (click)="cs.cadastrarContatoPorItens(no.value, tel.value, email.value, data.value, tipo.value, cs.imagemSelecionada)">
-      </div>
+    <div class="form-check form-switch ps-5 pt-3">
+      <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" #fav>
+      <label class="form-check-label" for="flexSwitchCheckDefault">Favorito</label>
     </div>
 
-  </form>
+    <div class=" pt-4">
+      <input class="btn btn-primary" type="button" value="Adicionar" 
+          (click)="cs.cadastrarContatoPorItens(no.value, tel.value, email.value, data.value, 
+                                               tipo.value, cs.imagemSelecionada, fav.checked)">
+    </div>
+
+  </div>
+
+</form>

@@ -1,18 +1,14 @@
 .icon_agenda {
     border-radius: 100%;
     margin: 15px;
-    width: 120px;
+    width: 100px;
 }
 
-.icon_agenda img {
-    width: auto;
+
+.aparecer {
+    display: block;
 }
 
-.card{
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    margin: 10px;
-}
-
-.card:hover {
-    transform: scale(1.05)
+.desaparecer {
+    display: none;
 }
