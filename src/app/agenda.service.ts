@@ -11,9 +11,9 @@ export class AgendaService {
   imagemSelecionada: string;
 
     constructor() {
-      let ana = new Contato('Ana Maria', '(84) 91234-5678', 'ana.maria@gmail.com', new Date(9, 8, 2001), Tipo.trab, 'avatar/mulher1.png', true);
-      let jorge = new Contato('Jorge', '(84) 91234-5678', 'jorge.silva@gmail.com', new Date(9, 8, 2001), Tipo.fam, 'avatar/homem1.png', false);
-      let marcos = new Contato('Marcos Campos', '(84) 91234-5678', 'marcos.campos@gmail.com', new Date(1, 10, 2004), Tipo.amg, 'avatar/homem.png', true);  
+      let ana = new Contato('Ana Maria', '(84) 91234-5678', 'ana.maria@gmail.com', new Date(2005, 8, 22), Tipo.trab, 'avatar/mulher1.png', true);
+      let jorge = new Contato('Jorge', '(84) 91234-5678', 'jorge.silva@gmail.com', new Date(2001, 9, 25), Tipo.fam, 'avatar/homem1.png', false);
+      let marcos = new Contato('Marcos Campos', '(84) 91234-5678', 'marcos.campos@gmail.com', new Date(1995, 10, 23), Tipo.amg, 'avatar/homem.png', true);  
 
 
       this.contatos = [ana, jorge, marcos];

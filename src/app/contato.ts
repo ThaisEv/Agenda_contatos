@@ -64,7 +64,7 @@ export class Contato {
         return this.email;
     }
     obterAniversario() {
-        return this.aniversario;
+        return this.aniversario.toLocaleDateString()
     }
     obterTipo() {
         return this.tipo;
